@@ -1,0 +1,260 @@
+/* Container styling */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for the first row */
+    grid-template-rows: auto auto; /* Two rows with automatic height */
+    gap: 20px; /* Space between the cards */
+    
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+/* Item 1 styling */
+.item-1 {
+    grid-row:1/4 ;
+    grid-column: 1/4;
+
+    background-color: #6a67ce;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: solid black;
+}
+
+/* Item 2 styling */
+.item-2 {
+    grid-row: 1/6;
+    grid-column: 4/6;
+    background-color: #4a4a4a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: solid black;
+    z-index: 1;
+
+}
+
+/* Item 3 styling */
+.item-3 {
+    grid-row: 1/4;
+    grid-column: 5/10;
+    background-color: #eb3737;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: solid black;
+
+}
+
+/* Responsive Design */
+@media (max-width: 300px) {
+    .container {
+        grid-template-columns: 1fr; /* Changes to a single column on small screens */
+    }
+}
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 1.6;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10%;
+    border: 10px solid black;
+    min-height: 100vh;
+    align-items: flex-start;
+    gap: 0; /* Remove gap between cards */
+    position: relative;
+  }
+  
+  .card {
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0; /* Remove margin to prevent space between cards */
+  }
+  
+  
+  .card.testimonial {
+    border-color: #3498db; /* Change border color for testimonial cards */
+    border-style: solid; /* Solid border style */
+  }
+  
+  .testimonial-header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 1rem; /* Space between image and text container */
+  }
+  
+  .testimonial-header img {
+    border-radius: 50%; /* Circular image */
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  .testimonial-header .text-container {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+  }
+  
+  .testimonial-header .name {
+    font-size: 1.2rem; /* Adjust as needed */
+    font-weight: bold; /* Bold text for name */
+  }
+  
+  .testimonial-header .role {
+    font-size: 0.9rem; /* Smaller font size for role */
+  }
+  
+  /* Card Specific Styles */
+  
+  #card-1 {
+    background-color: #7409f6e2;
+    color: white;
+    width: 100%;
+    max-width: 55rem;
+    height: 25rem;
+    order: 1;
+  }
+  
+  #card-2 {
+    background-color: #4A546C;
+    color: #f8f3f9;
+    width: 100%;
+    max-width: 30rem;
+    height: 25rem;
+    order: 2;
+  }
+  
+  #card-5 {
+    background-color: #4A546C;
+    color: #f8f3f9;
+    width: 100%;
+    max-width: 25rem;
+    height: 55rem;
+    order: 3;
+  }
+  
+  #card-3 {
+    background-color: #FFFFFF;
+    color: #0d0d0d;
+    width: 100%;
+    max-width: 30rem;
+    height: 25rem;
+    order: 4;
+  }
+  
+  #card-4 {
+    background-color: #19202E;
+    color: #f4f4f4;
+    width: 100%;
+    max-width: 50rem;
+    height: 25rem;
+    order: 5;
+  }
+  
+  
+  #card-5 {
+    margin-right: 11%;
+    background-color: #4A546C;
+    color: #f8f3f9;
+    width: 100%;
+    max-width: 25rem;
+    height: 55rem;
+    order: 3; /* Keep card 5 third */
+  }
+  
+  #card-3 {
+    margin-top: -21%;
+    background-color: #FFFFFF;
+    color: #0d0d0d;
+    width: 100%;
+    max-width: 30rem;
+    height: 25rem;
+    order: 4; /* Position card 3 in the second row */
+  }
+  
+  #card-4 {
+    margin-right: 33%;
+    margin-top: -21%;
+    background-color: #19202E;
+    color: #f4f4f4;
+    width: 100%;
+    max-width: 50rem;
+    height: 25rem;
+    order: 5; /* Position card 4 in the second row */
+  }
+  
+  .testimonial-quote {
+    margin-top: 3%;
+  }
+  
+  .main-quote {
+    font-size: 1.8rem;
+    font-weight: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 2%; /* Reduce padding for smaller screens */
+    }
+  
+    .card {
+      width: 100%;
+      margin: 1rem 0; /* Ensure cards stack vertically on small screens */
+    }
+  
+    #card-1, #card-2, #card-3, #card-4, #card-5 {
+      height: auto; /* Adjust height for smaller screens */
+    }
+  
+    .main-quote {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-header img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .testimonial-header .name {
+      font-size: 1rem;
+    }
+  
+    .testimonial-header .role {
+      font-size: 0.8rem;
+    }
+  } */
+  
